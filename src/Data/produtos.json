@@ -1,0 +1,58 @@
+{
+"produtos" : [
+        {
+            "id": 1,
+            "nome" : "Amazon Echo Show 8",
+            "preco" : "R$ 854.05",
+            "link"  : "https://www.amazon.com.br/Echo-Show-8-Smart-Speaker-Alexa/dp/B07SG8F1QF/",
+            "status" : "ativo",
+            "img" : "https://m.media-amazon.com/images/I/513fGgWFtXL._AC_SX679_.jpg",
+            "categoria" : "mais-vendidos"
+        },
+        {
+            "id": 2,
+            "nome" : "Google Chrome Cast 3",
+            "preco" : "R$ 369.00",
+            "link"  : "https://www.magazineluiza.com.br/chromecast-3-streaming-device-google-full-hd-conexao-hdmi/p/031309900/et/aple/?partner_id=2470",
+            "status" : "ativo",
+            "img" : "https://a-static.mlcdn.com.br/618x463/chromecast-3-streaming-device-google-full-hd-conexao-hdmi/magazineluiza/031309900/d5efd965b2b70b23593042c31dc8e98e.jpg",
+            "categoria" : "lançamentos"
+        },
+        {
+            "id": 3,
+            "nome" : "Playstation 5",
+            "preco" : "R$ 5400.00",
+            "link"  : "https://www.magazineluiza.com.br/console-playstation-5-ps5-sony/p/043079500/ga/otga/?partner_id=9815",
+            "status" : "inativo",
+            "img" : "https://a-static.mlcdn.com.br/800x560/console-playstation-5-ps5-sony/magazineluiza/043079500/9d4f0cd7244929620b459cf9fd5e471c.jpg",
+            "categoria" : "diversão"
+        },
+        {
+            "id": 4,
+            "nome" : "Câmera Instax Mini 11",
+            "preco" : "R$ 399.00",
+            "link"  : "https://www.amazon.com.br/C%C3%A2mera-Instax-Mini-Fujifilm-Brasil/dp/B08P691GC6/ref=asc_df_B08P691GC6",
+            "status" : "ativo",
+            "img" : "https://images.summitmedia-digital.com/spotph/images/2020/02/26/87838658-1418331935015054-3933630292933214208-o-1582695753.jpg",
+            "categoria" : "lançamentos"
+        },
+        {
+            "id": 5,
+            "nome" : "Apple Watch Ultra 2 ",
+            "preco" : "R$ 969.00",
+            "link"  : "https://www.apple.com/br/shop/buy-watch/apple-watch-ultra/49mm-redecelular-tit%C3%A2nio-verde-cinza-pulseira-loop-trail-m-l",
+            "status" : "ativo",
+            "img" : "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT5Y3ref_VW_34FR+watch-49-titanium-ultra2_VW_34FR+watch-face-49-trail-ultra2_VW_34FR_GEO_BR?wid=5120&hei=3280&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=eldNbTRJWU9nOWtKVVpzaVh6WGlzQkZPYUtzeTRQVVJ5RG0wcnpadi96L1VYSXRUN1VQK3Nhb1hTK1VFYms2a0IzMDBvaSthcUJDc2lUMklaVFdPN1lxMHdmWUhUbHhWZXRCWndOTDlaS25RQytldTZZWXkzcTdrSWtMZFhrNHpSQkxBYTZwNkZkckhUekp4dDhUV21HdHpZVGZEajdNRW5XSVpDZ0FDVDlSc29VdkFQbWg1b0NDTTJLejlERVlKZjdrdnQvY0w2Vld0L2dTbkNVUzZ4MEJLYzJoeks1UFlHVjNzSFpoNGE2WT0",
+            "categoria" : "mais-vendidos"
+        },
+        {
+            "id": 6,
+            "nome" : "Fender Telecaster Sunburst",
+            "preco" : "R$ 443.70",
+            "link"  : "https://harmoniamusical.com.br/guitarra-fender-player-telecaster-hh-pf-014-5233-500-3color-sunburst.html",
+            "status" : "ativo",
+            "img" : "https://harmoniamusical.com.br/media/catalog/product/cache/7c65d8a16c1a9fa15447e0ab5eeb833b/g/u/guitarra_fender_player_telecaster_hh_pf_014_5233_500_3_color_sunburst.jpg",
+            "categoria" : "diversão"
+        }
+    ]
+}
