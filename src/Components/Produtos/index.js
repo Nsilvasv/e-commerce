@@ -114,7 +114,7 @@ const Produtos = () => {
             </div>
 
             <input type="range" className="flex xl:justify-end lg:justify-center mt-5 items-center" min={0}  max={5000}  onInput={(e) => {filterProdutos("preco", e.target.value)}}/>
-
+            <h1>Preço de R$0 a R$5000.00</h1>
             <Container>
 
                 {produto.map( (item) => (
