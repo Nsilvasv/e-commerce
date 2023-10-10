@@ -1,6 +1,7 @@
 import { useState } from "react"
 import produtos from "../../Data/produtos.json"
 import tw from "tailwind-styled-components"
+import { BsArrowRightShort } from "react-icons/bs"
 import { NavLink } from "react-router-dom"
 
 const ContainerCardapio = tw.div`
@@ -11,25 +12,26 @@ const ContainerCardapio = tw.div`
     
 `
 const Cabecalho = tw.h1`
-    text-black-500 
-    font-bold 
-    text-2xl 
+    font-black 
+    text-3xl 
     text-center 
     py-1
 ` 
 const Button = tw.button`
-    m-1
-    pb-6
+    px-2
+    mt-8
+    mx-1 
+    rounded-full
     border-orange-700 
-    text-balck 
-    hover:bg-white 
-    hover:text-orange-700 
-    hover:border-orange-700
+    text-white 
+    bg-slate-600
+    hover:bg-black
+  
 `
 const Container = tw.div`
     grid 
     md:grid-cols-2 
-    sm:grid-cols-1 
+    sm:grid-cols-2 
     lg:grid-cols-3 
     gap-6  
     py-4
@@ -39,6 +41,7 @@ const DivInfo = tw.div`
     border-none 
     hover:scale-105 
     duration-300
+    mt-10
     
 `
 const Img = tw.img`
@@ -51,80 +54,94 @@ const TextoPreco = tw.p`
     flex
     justify-center
     font-bold
+
 `
 const TextoVejaMais = tw.p`
     flex 
-    justify-between 
-    pl-2 
+    pl-2
     py-4 
-    -mt-7
+    mt-7
     items-center 
-    text-indigo-600
+    text-indigo-700
 `
 
 const Produtos = () => {
 
-   const dados = produtos.produtos
+    const dados = produtos.produtos
 
-   const [produto, setProduto ] = useState(dados)
+    const [produto, setProduto ] = useState(dados)
 
-    const filtraCategoria = (categoria) => {
-        setProduto(dados.filter( item => {
-            return item.categoria === categoria
-        }))
+
+    const filterProdutos = (filtro, valor) =>{
+        if(filtro === "categoria"){
+            const produto = dados.filter(produto => produto.categoria === valor)
+            setProduto(produto)
+        }
+        if(filtro === "preco"){
+            const produto = dados.filter(produto => {
+                let preco = produto.preco
+                preco = parseFloat(preco)
+                return preco <= valor
+            })
+            setProduto(produto)
+        }
     }
-
 
     return(
         <ContainerCardapio>
-        <Cabecalho> Nossos Produtos </Cabecalho>
+     
+            <Cabecalho> Nossos Produtos </Cabecalho>
 
-        <div className="flex flex-col lg:flex-row justify-center">
+            <div className="flex flex-col lg:flex-row justify-center">
 
-            <div className="flex justify-center md:justify-center">
+                <div className="flex justify-center md:justify-center sm:">
 
-
-                <Button onClick={() => setProduto(dados)} > 
-                    Todos
-                </Button>
-                <Button onClick={() => filtraCategoria("diversão")} > 
-                    Diversão
-                </Button>
-                <Button onClick={() => filtraCategoria("mais-vendidos")} > 
-                    Mais vendidos
-                </Button>
-                <Button onClick={() => filtraCategoria("lançamentos")} > 
-                    Lançamentos
-                </Button>
+                    <Button onClick={() => setProduto(dados)} > 
+                        Todos
+                    </Button>
+                    <Button onClick={() => filterProdutos("categoria", "diversão")} > 
+                        Diversão
+                    </Button>
+                    <Button onClick={() => filterProdutos("categoria", "mais-vendidos")} > 
+                        Mais vendidos
+                    </Button>
+                    <Button onClick={() => filterProdutos("categoria", "promoção")} > 
+                        Promoção
+                    </Button>
+            
+                </div>
 
             </div>
-        </div>
 
-        <Container>
+            <input type="range" className="flex xl:justify-end lg:justify-center mt-5 items-center" min={0}  max={5000}  onInput={(e) => {filterProdutos("preco", e.target.value)}}/>
 
-            {produto.map( (item) => (
-                <DivInfo key={item.id}>
+            <Container>
 
-                    <NavLink to={`/produtos/${item.id}`}> <TextoVejaMais> Veja mais </TextoVejaMais> </NavLink>
+                {produto.map( (item) => (
+                    <DivInfo key={item.id}>
 
-
-                    <Img src={item.img}  alt={item.nome}/>
-
-                    <div className="flex justify-center py-2 px-2 ">
-                        <p className="font-bold ">{item.nome}</p> 
-                    </div>
-
-                    <div className="flex justify-center pl-2 py-1 ">
-                        <TextoPreco> {item.preco}  </TextoPreco>
-                    </div>
+                        <NavLink to={`/produtos/${item.id}`}> 
+                            <TextoVejaMais> Veja mais <BsArrowRightShort className="ml-1 h-6 w-6" /> </TextoVejaMais> 
+                        </NavLink>
 
 
-                </DivInfo>
-            ))}
+                        <Img src={item.img}  alt={item.nome}/>
 
-        </Container>
+                        <div className="flex justify-center py-2 px-2 ">
+                            <p className="font-bold ">{item.nome}</p> 
+                        </div>
 
-    </ContainerCardapio>
+                        <div className="flex justify-center pl-2 py-1 ">
+                            <TextoPreco> {item.preco}  </TextoPreco>
+                        </div>
+
+
+                    </DivInfo>
+                ))}       
+
+            </Container>
+
+        </ContainerCardapio>
     )
 }
 
