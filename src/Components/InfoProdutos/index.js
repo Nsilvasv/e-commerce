@@ -3,7 +3,7 @@ import produtos from "../../Data/produtos.json"
 
 const InfoProdutos = () => {
 
-    const dados= produtos.produtos
+    const dados = produtos.produtos
 
     const proId = useParams();
     const proDetail = dados.filter(item => item.id == proId.id)

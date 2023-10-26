@@ -46,7 +46,7 @@ const DivInfo = tw.div`
 `
 const Img = tw.img`
     w-full 
-    h-[200px] 
+    h-[120px] 
     object-contain
     rounded-lg
 `
@@ -84,6 +84,8 @@ const Produtos = () => {
                 return preco <= valor
             })
             setProduto(produto)
+            console.log(produto);
+
         }
     }
 
